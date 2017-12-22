@@ -44,6 +44,12 @@
             <artifactId>spigot</artifactId>
             <version>1.12.1-R0.1-SNAPSHOT</version>
         </dependency>
+        <!--ProtocolLib-->
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>4.3.0</version>
+        </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>

@@ -2,3 +2,4 @@ name: May-Common-Library-Kotlin
 main: cc.zoyn.kotlincore.Core
 version: 1.0
 author: Zoyn
+depend: [ProtocolLib]

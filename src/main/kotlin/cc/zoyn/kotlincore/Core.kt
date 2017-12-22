@@ -10,13 +10,13 @@ import org.bukkit.plugin.java.JavaPlugin
  */
 class Core : JavaPlugin() {
 
-    private var instance: Core? = null
-
     override fun onEnable() {
         instance = this
     }
 
     companion object {
-        val instance: Core? = null
+        @JvmStatic
+        lateinit var instance: Core
     }
+
 }

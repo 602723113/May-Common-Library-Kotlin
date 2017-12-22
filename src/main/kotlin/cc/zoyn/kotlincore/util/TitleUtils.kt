@@ -7,6 +7,7 @@ import com.comphenix.protocol.wrappers.EnumWrappers
 import com.comphenix.protocol.wrappers.WrappedChatComponent
 import org.bukkit.ChatColor
 import org.bukkit.entity.Player
+import java.lang.reflect.InvocationTargetException
 
 /**
  * Easy to send a title
@@ -45,7 +46,11 @@ object TitleUtils {
                     .write(2, fadeOut)
 
             // send packet
-            protocolManager.sendServerPacket(player, packet, false)
+            try {
+                protocolManager.sendServerPacket(player, packet, false)
+            } catch (e: InvocationTargetException) {
+                e.printStackTrace()
+            }
         }
         if (subTitle != null) {
             var translatedSubTitle = ChatColor.translateAlternateColorCodes('&', subTitle)
@@ -58,7 +63,11 @@ object TitleUtils {
             packet.integers.write(1, stay)
             packet.integers.write(2, fadeOut)
 
-            protocolManager.sendServerPacket(player, packet, false)
+            try {
+                protocolManager.sendServerPacket(player, packet, false)
+            } catch (e: InvocationTargetException) {
+                e.printStackTrace()
+            }
         }
 
     }

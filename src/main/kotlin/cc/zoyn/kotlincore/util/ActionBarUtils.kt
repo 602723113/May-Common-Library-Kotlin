@@ -5,6 +5,7 @@ import com.comphenix.protocol.ProtocolLibrary
 import com.comphenix.protocol.wrappers.WrappedChatComponent
 import net.md_5.bungee.api.ChatColor
 import org.bukkit.entity.Player
+import java.lang.reflect.InvocationTargetException
 
 /**
  * Easy to send an actionbar
@@ -34,7 +35,11 @@ object ActionBarUtils {
         packet.bytes.write(0, 2.toByte())
 
         // send packet
-        protocolManager.sendServerPacket(player, packet, false)
+        try {
+            protocolManager.sendServerPacket(player, packet, false)
+        } catch (e: InvocationTargetException) {
+            e.printStackTrace()
+        }
     }
 
 }
